@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:web/widget/circle.dart';
 import 'package:web/widget/data.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -65,8 +66,8 @@ class LandingPageDesktop extends StatelessWidget {
                 ]),
             DefaultTextStyle(
               style: const TextStyle(
-                color: Color.fromARGB(255, 230, 77, 77),
-                fontSize: 45,
+                color: Color.fromARGB(255, 237, 233, 233),
+                fontSize: 15,
               ),
               child: AnimatedTextKit(
                   repeatForever: true,
@@ -101,13 +102,17 @@ class LandingPageDesktop extends StatelessWidget {
           ],
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0),
-        child: Image.asset(
-          "assets/images/s_img.png",
-          fit: BoxFit.cover,
+      // Padding(
+
+      WidgetCircularAnimator(
+        child: Padding(
+          padding: const EdgeInsets.only(right: 50.0),
+          child: Image.asset(
+            "assets/images/s_img.png",
+            fit: BoxFit.cover,
+          ),
         ),
-      )
+      ),
     ];
   }
 

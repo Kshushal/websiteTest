@@ -43,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget porfolioMobileAppBar(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 36, 69, 78),
-        title: const Text(''),
+        backgroundColor: Colors.green,
+        // title: const Text(''),
       ),
       drawer: Drawer(
         shadowColor: Colors.orange,
@@ -185,9 +185,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget porfolioDesktopAppBar(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomeColor.scaffoldBg,
+      backgroundColor: Colors.green,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 32, 33, 77),
+        // backgroundColor: const Color.fromARGB(255, 32, 33, 77),
         actions: [
           MaterialButton(
             shape: const RoundedRectangleBorder(
@@ -288,23 +288,23 @@ class _HomeScreenState extends State<HomeScreen> {
       return Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color.fromRGBO(28, 28, 56, 1),
-                  Color.fromRGBO(37, 25, 44, 1)
-                ]),
-          ),
+              // gradient: LinearGradient(
+              //     begin: Alignment.centerLeft,
+              //     end: Alignment.centerRight,
+              //     colors: [
+              //       Color.fromRGBO(28, 28, 56, 1),
+              //       Color.fromRGBO(37, 25, 44, 1)
+              //     ]),
+              ),
           child: SingleChildScrollView(
             controller: _scrollController,
             child: Column(
               children: <Widget>[
-                if (constraints.maxWidth >= 600)
+                if (constraints.maxWidth >= 1600)
                   const LandingPageDesktop()
                 else
                   const LandingPageMobile(),
-                if (constraints.maxWidth >= 600)
+                if (constraints.maxWidth >= 1600)
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 20.0, bottom: 10, right: 15.0, left: 15.0),
