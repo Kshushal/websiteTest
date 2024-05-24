@@ -20,7 +20,8 @@ class WorkView extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 25.0),
                 child: Text(
                   text,
-                  style: const TextStyle(fontSize: 25, color: Colors.white),
+                  style: const TextStyle(
+                      fontSize: 25, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
               const SizedBox(
@@ -31,15 +32,27 @@ class WorkView extends StatelessWidget {
                 children: [
                   OutlinedButton(
                     onPressed: () => _launchURL(expletter),
+                    style: OutlinedButton.styleFrom(
+                      side:
+                          const BorderSide(color: Colors.black), // Black border
+                    ),
                     child: const Text(
                       "Experience Letter",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 10, 9, 9), fontSize: 18),
                     ),
                   ),
                   OutlinedButton(
                     onPressed: () => _launchURL(intcertificate),
-                    child: const Text("Internship Letter",
-                        style: TextStyle(color: Colors.white, fontSize: 18)),
+                    style: OutlinedButton.styleFrom(
+                      side:
+                          const BorderSide(color: Colors.black), // Black border
+                    ),
+                    child: const Text(
+                      "Internship Letter",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 13, 11, 11), fontSize: 18),
+                    ),
                   ),
                 ],
               ),

@@ -1,9 +1,7 @@
-// ignore_for_file: deprecated_member_use, unused_element
-
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:web/landingpage/about_desktop.dart';
 import 'package:web/landingpage/about_mobile.dart';
+import 'package:web/landingpage/card_switch.dart';
 import 'package:web/landingpage/colors.dart';
 import 'package:web/landingpage/landing_page.dart';
 import 'package:web/landingpage/landmobil.dart';
@@ -14,7 +12,7 @@ import 'package:web/landingpage/work_page.dart';
 import 'package:web/widget/navbar.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -22,6 +20,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        // title: const Text(''),
       ),
       drawer: Drawer(
-        shadowColor: Colors.orange,
-        surfaceTintColor: Colors.red,
-        elevation: 5,
         child: Container(
           color: const Color.fromARGB(255, 2, 2, 2),
           child: ListView(
@@ -179,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: webBody(context),
+      body: screenBody(context),
     );
   }
 
@@ -187,80 +187,64 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
-        // backgroundColor: const Color.fromARGB(255, 32, 33, 77),
         actions: [
           MaterialButton(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            ),
             onPressed: () {
               _scrollTo(0.0);
             },
             child: const Text(
               'Home',
               style:
-                  TextStyle(color: CustomeColor.whitesencondary, fontSize: 18),
+                  TextStyle(color: Color.fromARGB(255, 3, 3, 3), fontSize: 18),
             ),
           ),
           const SizedBox(width: 8),
           MaterialButton(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            ),
             onPressed: () {
               _scrollTo(800);
             },
             child: const Text(
               'About',
               style:
-                  TextStyle(color: CustomeColor.whitesencondary, fontSize: 18),
+                  TextStyle(color: Color.fromARGB(255, 3, 3, 3), fontSize: 18),
             ),
           ),
           const SizedBox(width: 8),
           MaterialButton(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            ),
             onPressed: () {
               _scrollTo(1300.0);
             },
             child: const Text(
               'Skills',
               style:
-                  TextStyle(color: CustomeColor.whitesencondary, fontSize: 18),
+                  TextStyle(color: Color.fromARGB(255, 3, 3, 3), fontSize: 18),
             ),
           ),
           const SizedBox(width: 8),
           MaterialButton(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            ),
             onPressed: () {
               _scrollTo(1600.0);
             },
             child: const Text(
               'Experience',
               style:
-                  TextStyle(color: CustomeColor.whitesencondary, fontSize: 18),
+                  TextStyle(color: Color.fromARGB(255, 3, 3, 3), fontSize: 18),
             ),
           ),
           const SizedBox(width: 8),
           MaterialButton(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            ),
             onPressed: () {
               _scrollTo(2000.0);
             },
             child: const Text(
               'Projects',
               style:
-                  TextStyle(color: CustomeColor.whitesencondary, fontSize: 18),
+                  TextStyle(color: Color.fromARGB(255, 3, 3, 3), fontSize: 18),
             ),
           ),
         ],
       ),
-      body: webBody(context),
+      body: screenBody(context),
     );
   }
 
@@ -272,179 +256,144 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Future<void> _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  Widget webBody(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
-    final screenHeight = screenSize.height;
+  Widget screenBody(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-              // gradient: LinearGradient(
-              //     begin: Alignment.centerLeft,
-              //     end: Alignment.centerRight,
-              //     colors: [
-              //       Color.fromRGBO(28, 28, 56, 1),
-              //       Color.fromRGBO(37, 25, 44, 1)
-              //     ]),
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(
+                "assets/images/top.jpg",
+                fit: BoxFit.cover,
               ),
-          child: SingleChildScrollView(
-            controller: _scrollController,
-            child: Column(
-              children: <Widget>[
-                if (constraints.maxWidth >= 1600)
-                  const LandingPageDesktop()
-                else
-                  const LandingPageMobile(),
-                if (constraints.maxWidth >= 1600)
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 20.0, bottom: 10, right: 15.0, left: 15.0),
-                    child: Container(
-                      height: screenHeight * 0.4,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(200),
-                            bottomLeft: Radius.circular(60),
-                            bottomRight: Radius.circular(200),
-                            topRight: Radius.circular(40)),
-                        color: CustomeColor.bgLight1,
-                        border: Border.all(),
-                      ),
-                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                      width: screenWidth,
-                      child: const Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'About Me',
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: CustomeColor.whiteprimary),
-                          ),
-                          SizedBox(height: 50),
-                          AboutDesktop(),
-                        ],
-                      ),
-                    ),
-                  )
-                else
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 20.0, bottom: 10, right: 15.0, left: 15.0),
-                    child: Container(
-                      height: screenHeight * 0.7,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(200),
-                            bottomLeft: Radius.circular(60),
-                            bottomRight: Radius.circular(200),
-                            topRight: Radius.circular(40)),
-                        color: CustomeColor.bgLight1,
-                        border: Border.all(),
-                      ),
-                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                      width: screenWidth,
-                      child: const Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'About Me',
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: CustomeColor.whiteprimary),
-                          ),
-                          SizedBox(height: 50),
-                          AboutMobile(),
-                        ],
-                      ),
-                    ),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      top: 20.0, bottom: 10, right: 15.0, left: 15.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(200),
-                          bottomLeft: Radius.circular(60),
-                          bottomRight: Radius.circular(200),
-                          topRight: Radius.circular(40)),
-                      color: CustomeColor.bgLight1,
-                      border: Border.all(),
-                    ),
-                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                    width: screenWidth,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Text(
-                          'Skills',
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: CustomeColor.whiteprimary),
-                        ),
-                        const SizedBox(height: 50),
-                        if (constraints.maxWidth >= 600)
-                          const SkillsDesktop()
-                        else
-                          const SkillsMobile(),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      top: 20.0, bottom: 10, right: 15.0, left: 15.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(200),
-                          bottomLeft: Radius.circular(60),
-                          bottomRight: Radius.circular(200),
-                          topRight: Radius.circular(40)),
-                      color: CustomeColor.bgLight1,
-                      border: Border.all(),
-                    ),
-                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                    width: screenWidth,
-                    // ignore: prefer_const_constructors
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Text(
-                          'Work Experience',
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: CustomeColor.whiteprimary),
-                        ),
-                        SizedBox(height: 50),
-                        WorkView(),
-                      ],
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
-                  child: ProjectSection(),
-                ),
-                const FooterView(),
-              ],
             ),
-          ),
+            Positioned.fill(
+              child: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color.fromRGBO(225, 33, 242, 0.494),
+                      Color.fromRGBO(109, 44, 223, 0.494),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SingleChildScrollView(
+              controller: _scrollController,
+              child: Column(
+                children: [
+                  if (constraints.maxWidth >= 1600)
+                    const LandingPageDesktop()
+                  else
+                    const LandingPageMobile(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: MediaQuery.of(context).size.width * 0.05),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(120),
+                            bottomLeft: Radius.circular(80),
+                            bottomRight: Radius.circular(120),
+                            topRight: Radius.circular(80)),
+                      ),
+                      child: Column(
+                        children: [
+                          const Text(
+                            'About Me',
+                            style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          const SizedBox(height: 50),
+                          if (MediaQuery.of(context).size.width >= 1200)
+                            const AboutDesktop()
+                          else
+                            const AboutMobile(),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: MediaQuery.of(context).size.width * 0.05),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(120),
+                            bottomLeft: Radius.circular(80),
+                            bottomRight: Radius.circular(120),
+                            topRight: Radius.circular(80)),
+                      ),
+                      child: Column(
+                        children: [
+                          const Text(
+                            'Skills',
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 0, 0, 0)),
+                          ),
+                          const SizedBox(height: 50),
+                          if (MediaQuery.of(context).size.width >= 600)
+                            const SkillsDesktop()
+                          else
+                            const SkillsMobile(),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: MediaQuery.of(context).size.width * 0.05),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(40)),
+                        border: Border.all(),
+                      ),
+                      padding: EdgeInsets.all(
+                          MediaQuery.of(context).size.width * 0.05),
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Work Experience',
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: CustomeColor.whiteprimary),
+                          ),
+                          SizedBox(height: 50),
+                          WorkView(),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+                    child: ProjectSection(),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+                    child: GlassCardNavigation(),
+                  ),
+                  const FooterView(),
+                ],
+              ),
+            ),
+          ],
         ),
       );
     });

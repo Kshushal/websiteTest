@@ -17,10 +17,15 @@ class AboutDesktop extends StatelessWidget {
               constraints: const BoxConstraints(
                   maxWidth: double.maxFinite, maxHeight: double.maxFinite),
               // backgroundColor: CustomeColor.bgLight2,
-              child: Text(
-                aboutMePoints1,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
-                textAlign: TextAlign.justify,
+              child: Row(
+                children: [
+                  Text(
+                    aboutMePoints,
+                    style: const TextStyle(
+                        fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
               )),
         )
       ],

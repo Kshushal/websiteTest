@@ -19,7 +19,7 @@ class AboutMobile extends StatelessWidget {
               ),
               // backgroundColor: CustomeColor.bgLight2,
               child: Text(
-                aboutMePoints1,
+                aboutMePoints,
                 style: const TextStyle(fontSize: 18, color: Colors.white),
                 textAlign: TextAlign.justify,
               )),

@@ -37,8 +37,8 @@ class LandingPageMobile extends StatelessWidget {
                       ]),
                   Image.asset(
                     "assets/images/wl.png",
-                    height: 75,
-                    width: 75,
+                    height: 50,
+                    width: 50,
                   ),
                 ],
               ),
@@ -148,23 +148,18 @@ class LandingPageMobile extends StatelessWidget {
 }
 
 const colorizeTextStyle = TextStyle(
-  fontSize: 30.0,
+  fontSize: 20.0,
   fontWeight: FontWeight.bold,
 );
 
 const mcolorizeTextStyle = TextStyle(
-  fontSize: 30.0,
+  fontSize: 22.0,
   fontWeight: FontWeight.bold,
 );
 
 const mhcolorizeTextStyle = TextStyle(
-  fontSize: 25.0,
+  fontSize: 18.0,
   fontWeight: FontWeight.bold,
 );
 
-const colorizeColors = [
-  Colors.grey,
-  Colors.blue,
-  Colors.orange,
-  Colors.red,
-];
+const colorizeColors = [Colors.black, Colors.black, Colors.red];

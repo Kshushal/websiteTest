@@ -44,8 +44,17 @@ String aboutRes3 =
 String aboutRes4 =
     "Enhancing app performance and real-time capabilities using Firebase, WebSocket technologies and Getx.\n";
 
-String aboutMePoints1 =
-    "I'm a skilled Flutter Developer passionate about Mobile App Development, With a strong background in Object-Oriented Programming (OOP), I've developed impactful mobile applications. I excel in problem-solving and analytical thinking, thriving both independently and as part of a team.My expertise includes integrating RESTful APIs and third-party services for enhanced app functionality.Proficient in Dart, I specialize in coding, debugging, and optimizing apps for different screen sizes using Flutter.I have experience in UI development and testing with the widget framework.I've collaborated with cross-functional teams to design and implement innovative app features.Additionally, I'm knowledgeable in Firebase and WebSocket technologies, enhancing app performance and real-time capabilities.";
+String aboutMePoints = """
+- I'm a skilled Flutter Developer passionate about Mobile App Development.
+- I have experience in UI development and testing with the widget framework.
+- I've collaborated with cross-functional teams to design and implement innovative app features.
+- I excel in problem-solving and analytical thinking, thriving both independently and as part of a team.
+- My expertise includes integrating RESTful APIs and third-party services for enhanced app functionality.
+- With a strong background in Object-Oriented Programming (OOP), I've developed impactful mobile applications.
+- Proficient in Dart, I specialize in coding, debugging, and optimizing apps for different screen sizes using Flutter.
+- Additionally, I'm knowledgeable in Firebase and WebSocket technologies, enhancing app performance and real-time capabilities.
+""";
+
 String location = "Nashik,Maharashtra, India";
 String email = "bhavsarshubham227@gmail.com";
 
