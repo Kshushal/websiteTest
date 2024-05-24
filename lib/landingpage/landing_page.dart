@@ -35,8 +35,8 @@ class LandingPageDesktop extends StatelessWidget {
                     ]),
                 Image.asset(
                   "assets/images/wl.png",
-                  height: 100,
-                  width: 100,
+                  height: 80,
+                  width: 80,
                 ),
               ],
             ),
@@ -73,10 +73,10 @@ class LandingPageDesktop extends StatelessWidget {
                   repeatForever: true,
                   isRepeatingAnimation: true,
                   animatedTexts: [
-                    TyperAnimatedText('Flutter Developer,'),
-                    TyperAnimatedText('Android Developer,'),
-                    TyperAnimatedText('IOS Developer,'),
-                    TyperAnimatedText('Web Developer.'),
+                    TyperAnimatedText(' Flutter Developer,'),
+                    TyperAnimatedText(' Android Developer,'),
+                    TyperAnimatedText(' IOS Developer,'),
+                    TyperAnimatedText(' Web Developer.'),
                   ]),
             ),
             const SizedBox(
@@ -144,23 +144,18 @@ class LandingPageDesktop extends StatelessWidget {
 }
 
 const colorizeTextStyle = TextStyle(
-  fontSize: 50.0,
+  fontSize: 35.0,
   fontWeight: FontWeight.bold,
 );
 
 const mcolorizeTextStyle = TextStyle(
-  fontSize: 30.0,
-  fontWeight: FontWeight.bold,
-);
-
-const mhcolorizeTextStyle = TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
 );
 
-const colorizeColors = [
-  Colors.grey,
-  Colors.blue,
-  Colors.orange,
-  Colors.red,
-];
+const mhcolorizeTextStyle = TextStyle(
+  fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+);
+
+const colorizeColors = [Color.fromARGB(255, 0, 0, 0), Colors.black, Colors.red];

@@ -8,7 +8,7 @@ class CustomeColor {
   static const Color hintDark = Color(0xff666874);
   static const Color yellowprimary = Color.fromARGB(255, 85, 246, 57);
   static const Color yellowsencandary = Color.fromARGB(255, 63, 221, 60);
-  static const Color whiteprimary = Color.fromARGB(255, 180, 180, 246);
+  static const Color whiteprimary = Color.fromARGB(255, 78, 78, 82);
   static const Color whitesencondary = Color.fromARGB(255, 170, 180, 228);
 }
 
