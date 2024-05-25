@@ -29,30 +29,30 @@ class SkillsDesktop extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < platformItems.length; i++)
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 1.0),
-                        // width: double.maxFinite,
-                        decoration: const BoxDecoration(
-                          // color: Color.fromARGB(255, 51, 75, 110),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(120),
-                              bottomLeft: Radius.circular(60),
-                              bottomRight: Radius.circular(160),
-                              topRight: Radius.circular(40)),
-                        ),
-                        child: ListTile(
-                          leading: Image.asset(
-                            platformItems[i]["img"],
-                            width: 26,
-                          ),
-                          title: Text(
-                            platformItems[i]["title"],
-                            style: TextStyle(color: Colors.black, fontSize: 22),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
+                    // for (int i = 0; i < platformItems.length; i++)
+                    //   Container(
+                    //     margin: const EdgeInsets.only(bottom: 1.0),
+                    //     // width: double.maxFinite,
+                    //     decoration: const BoxDecoration(
+                    //       // color: Color.fromARGB(255, 51, 75, 110),
+                    //       borderRadius: BorderRadius.only(
+                    //           topLeft: Radius.circular(120),
+                    //           bottomLeft: Radius.circular(60),
+                    //           bottomRight: Radius.circular(160),
+                    //           topRight: Radius.circular(40)),
+                    //     ),
+                    //     child: ListTile(
+                    //       leading: Image.asset(
+                    //         platformItems[i]["img"],
+                    //         width: 26,
+                    //       ),
+                    //       title: Text(
+                    //         platformItems[i]["title"],
+                    //         style: TextStyle(color: Colors.black, fontSize: 22),
+                    //         textAlign: TextAlign.center,
+                    //       ),
+                    //     ),
+                    //   ),
                     // Row(
                     //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     //   children: [
