@@ -18,6 +18,7 @@ class AboutDesktop extends StatelessWidget {
                   maxWidth: double.maxFinite, maxHeight: double.maxFinite),
               // backgroundColor: CustomeColor.bgLight2,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     aboutMePoints,

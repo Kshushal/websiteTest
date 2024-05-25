@@ -44,6 +44,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   sliding_up_panel: ^2.0.0
   animated_3d_card: ^0.0.5
+  sidebarx: ^0.17.1
 
 
 dev_dependencies:
