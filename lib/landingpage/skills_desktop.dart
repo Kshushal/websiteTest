@@ -97,9 +97,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[0]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -109,9 +109,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[1]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -121,9 +121,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[2]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -133,9 +133,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[3]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -145,9 +145,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[4]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -157,9 +157,9 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[5]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 25,
                         ),
                         Image.asset(
@@ -169,7 +169,7 @@ class SkillsDesktop extends StatelessWidget {
                         ),
                         Text(
                           skillsItems[6]["title"],
-                          style: TextStyle(fontSize: 22), // increased font size
+                          style: const TextStyle(fontSize: 22), // increased font size
                         ),
                       ],
                     ),

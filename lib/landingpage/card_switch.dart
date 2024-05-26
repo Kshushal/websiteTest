@@ -10,17 +10,17 @@ class GlassCardNavigation extends StatelessWidget {
     {
       'title': 'Card 1',
       'description': 'This is the description for card 1',
-      'image': AssetImage('assets/images/one.png'),
+      'image': const AssetImage('assets/images/one.png'),
     },
     {
       'title': 'Card 2',
       'description': 'This is the description for card 2',
-      'image': AssetImage('assets/images/two.png'),
+      'image': const AssetImage('assets/images/two.png'),
     },
     {
       'title': 'Card 3',
       'description': 'This is the description for card 3',
-      'image': AssetImage('assets/images/three.png'),
+      'image': const AssetImage('assets/images/three.png'),
     },
   ];
 
@@ -120,11 +120,11 @@ class CardWidget extends StatelessWidget {
   final ImageProvider image;
 
   const CardWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.image,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

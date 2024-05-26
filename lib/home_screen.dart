@@ -14,7 +14,7 @@ import 'package:web/widget/navbar.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -325,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   const Text(
@@ -366,8 +366,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       padding: EdgeInsets.all(
                           MediaQuery.of(context).size.width * 0.05),
-                      child: Column(
-                        children: const [
+                      child: const Column(
+                        children: [
                           Text(
                             'Work Experience',
                             style: TextStyle(
@@ -388,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+                        const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
                     child: GlassCardNavigation(),
                   ),
                   const FooterView(),

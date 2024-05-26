@@ -3,10 +3,9 @@ library widget_circular_animator;
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class WidgetCircularAnimator extends StatefulWidget {
-  const WidgetCircularAnimator({
+  const WidgetCircularAnimator({super.key, 
     this.innerColor = const Color.fromARGB(255, 203, 40, 40),
     this.outerColor = Colors.black,
     this.innerAnimation = Curves.linear,
@@ -18,7 +17,7 @@ class WidgetCircularAnimator extends StatefulWidget {
     this.outerAnimationSeconds = 25,
     this.reverse = true,
     required this.child,
-  }) : assert(child != null);
+  });
 
   final Color innerColor;
   final Color outerColor;
@@ -72,7 +71,7 @@ class _WidgetAnimatorState extends State<WidgetCircularAnimator>
 
   Center _child() {
     return Center(
-      child: Container(
+      child: SizedBox(
         width: widget.size * 0.7,
         height: widget.size * 0.7,
         child: widget.child,
@@ -87,7 +86,7 @@ class _WidgetAnimatorState extends State<WidgetCircularAnimator>
         child: CustomPaint(
           painter: Arc2Painter(
               color: widget.outerColor, iconsSize: widget.innerIconsSize),
-          child: Container(
+          child: SizedBox(
             width: widget.size,
             height: widget.size,
           ),
@@ -103,7 +102,7 @@ class _WidgetAnimatorState extends State<WidgetCircularAnimator>
         child: CustomPaint(
           painter: Arc1Painter(
               color: widget.innerColor, iconsSize: widget.outerIconsSize),
-          child: Container(
+          child: SizedBox(
             width: 0.85 * widget.size,
             height: 0.85 * widget.size,
           ),

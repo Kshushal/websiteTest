@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web/widget/data.dart';
-import 'package:web/landingpage/colors.dart';
 
 class WorkView extends StatelessWidget {
   const WorkView({super.key});
