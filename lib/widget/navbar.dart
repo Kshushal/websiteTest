@@ -31,96 +31,94 @@ class DesktopFooter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: Column(
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  username,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                username,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 30,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        socialMedia(
+                          "assets/images/git.png",
+                          Colors.black,
+                          () => _launchURL(githubUrl),
+                        ),
+                        const Text(
+                          "GitLab",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          socialMedia(
-                            "assets/images/git.png",
-                            Colors.black,
-                            () => _launchURL(githubUrl),
-                          ),
-                          const Text(
-                            "GitLab",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        socialMedia(
+                          "assets/images/in.png",
+                          Colors.blueAccent,
+                          () => _launchURL(linkedInUrl),
+                        ),
+                        const Text(
+                          "Linkedin",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300),
+                        )
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          socialMedia(
-                            "assets/images/in.png",
-                            Colors.blueAccent,
-                            () => _launchURL(linkedInUrl),
-                          ),
-                          const Text(
-                            "Linkedin",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        socialMedia(
+                          "assets/images/insta.png",
+                          Colors.pink,
+                          () => _launchURL(instagramUrl),
+                        ),
+                        const Text(
+                          "Instagram",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300),
+                        )
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          socialMedia(
-                            "assets/images/insta.png",
-                            Colors.pink,
-                            () => _launchURL(instagramUrl),
-                          ),
-                          const Text(
-                            "Instagram",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      ),
+                  ),
+                  const SizedBox(width: 20),
+                  MaterialButton(
+                    color: Colors.pink,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     ),
-                    const SizedBox(width: 20),
-                    MaterialButton(
-                      color: Colors.pink,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      ),
-                      onPressed: () {
-                        _launchURL(resumeLink);
-                      },
-                      child: const Text(
-                        "RESUME",
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    onPressed: () {
+                      _launchURL(resumeLink);
+                    },
+                    child: const Text(
+                      "RESUME",
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
           const Divider()
         ],
