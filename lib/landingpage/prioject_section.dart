@@ -8,11 +8,11 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ScreenSize = MediaQuery.of(context).size;
-    final Screenwidth = ScreenSize.width;
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      width: Screenwidth,
+      width: screenWidth,
       child: Column(
         children: [
           // work project title
