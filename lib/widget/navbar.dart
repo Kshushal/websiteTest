@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:web/widget/controller.dart';
 import 'package:web/widget/data.dart';
 
 class FooterView extends StatelessWidget {
@@ -26,7 +24,7 @@ class DesktopFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final swichController = Get.put(MainController());
+    // final _swichController = Get.put(MainController());
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: Column(
