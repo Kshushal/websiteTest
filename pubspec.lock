@@ -114,10 +114,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_screenutil
-      sha256: b372c35a772a1dc84142a3b9c5ee89a390834bd258e5e6a450d9b975b985d1c9
+      sha256: "8239210dd68bee6b0577aa4a090890342d04a136ce1c81f98ee513fc0ce891de"
       url: "https://pub.dev"
     source: hosted
-    version: "5.9.1"
+    version: "5.9.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -212,10 +212,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "25dfcaf170a0190f47ca6355bdd4552cb8924b430512ff0cafb8db9bd41fe33b"
+      sha256: bdb68674043280c3428e9ec998512fb681678676b3c54e773629ffe74419f8c7
       url: "https://pub.dev"
     source: hosted
-    version: "1.14.0"
+    version: "1.15.0"
   path:
     dependency: transitive
     description:
