@@ -51,143 +51,137 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.green,
       ),
-      // drawer: Drawer(
-      //   child: Container(
-      //     color: const Color.fromARGB(255, 2, 2, 2),
-      //     child: ListView(
-      //       children: [
-      //         const DrawerHeader(
-      //           decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.only(
-      //                 topLeft: Radius.circular(200),
-      //                 bottomLeft: Radius.circular(60),
-      //                 bottomRight: Radius.circular(200),
-      //                 topRight: Radius.circular(40)),
-      //             color: Color.fromARGB(255, 82, 30, 62),
-      //           ),
-      //           child: Center(
-      //             child: Text(
-      //               "<Shubham/>",
-      //               style: TextStyle(
-      //                   color: Colors.white,
-      //                   fontSize: 24,
-      //                   fontWeight: FontWeight.bold),
-      //             ),
-      //           ),
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.home,
-      //             color: Colors.red,
-      //           ),
-      //           title: const Text(
-      //             'Home',
-      //             style: TextStyle(
-      //                 color: Colors.red,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(0.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.person,
-      //             color: Colors.orange,
-      //           ),
-      //           title: const Text(
-      //             'About',
-      //             style: TextStyle(
-      //                 color: Colors.orange,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(850.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.play_arrow_sharp,
-      //             color: Colors.yellow,
-      //           ),
-      //           title: const Text(
-      //             'Skills',
-      //             style: TextStyle(
-      //                 color: Colors.yellow,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(1400.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.work_history_sharp,
-      //             color: Colors.green,
-      //           ),
-      //           title: const Text(
-      //             'Experience',
-      //             style: TextStyle(
-      //                 color: Colors.green,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(1900.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.event,
-      //             color: Colors.blue,
-      //           ),
-      //           title: const Text(
-      //             'Projects',
-      //             style: TextStyle(
-      //                 color: Colors.blue,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(2500.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           leading: const Icon(
-      //             Icons.handshake_sharp,
-      //             color: Colors.purple,
-      //           ),
-      //           title: const Text(
-      //             'Get in touch with me',
-      //             style: TextStyle(
-      //                 color: Colors.purple,
-      //                 fontSize: 15,
-      //                 fontWeight: FontWeight.bold),
-      //           ),
-      //           onTap: () {
-      //             _scrollTo(2800.0);
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      drawer: SidebarX(
-        controller: SidebarXController(selectedIndex: 0, extended: true),
-        items: const [
-          SidebarXItem(icon: Icons.home, label: 'Home'),
-          SidebarXItem(icon: Icons.search, label: 'Search'),
-        ],
+      drawer: Drawer(
+        child: Container(
+          color: const Color.fromARGB(255, 2, 2, 2),
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                      bottomLeft: Radius.circular(60),
+                      bottomRight: Radius.circular(200),
+                      topRight: Radius.circular(40)),
+                  color: Color.fromARGB(255, 82, 30, 62),
+                ),
+                child: Center(
+                  child: Text(
+                    "<Shubham/>",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.home,
+                  color: Colors.red,
+                ),
+                title: const Text(
+                  'Home',
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(0.0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.person,
+                  color: Colors.orange,
+                ),
+                title: const Text(
+                  'About',
+                  style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(850.0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.play_arrow_sharp,
+                  color: Colors.yellow,
+                ),
+                title: const Text(
+                  'Skills',
+                  style: TextStyle(
+                      color: Colors.yellow,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(1400.0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.work_history_sharp,
+                  color: Colors.green,
+                ),
+                title: const Text(
+                  'Experience',
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(1900.0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.event,
+                  color: Colors.blue,
+                ),
+                title: const Text(
+                  'Projects',
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(2500.0);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.handshake_sharp,
+                  color: Colors.purple,
+                ),
+                title: const Text(
+                  'Get in touch with me',
+                  style: TextStyle(
+                      color: Colors.purple,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _scrollTo(2800.0);
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
       ),
+     
       body: screenBody(context),
     );
   }
